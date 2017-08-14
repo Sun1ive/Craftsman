@@ -23,6 +23,11 @@
 	max-width 1100px
 	margin 0 auto
 
+.upperText
+	font(40px,Helvetica,700,$redText)
+	font-style italic
+	text-transform uppercase
+
 .header
 	display flex
 	flex-direction row
@@ -33,6 +38,7 @@
 	min-height 120px
 	width 100%
 	background-color: #FFF
+	z-index 999
 	.firstBlock
 		display flex
 		justify-content flex-end
@@ -106,11 +112,6 @@
 		h1
 			font(40px,Helvetica,400,$black)
 			margin-bottom 20px
-			span
-				font-weight bold
-				color $redText
-				font-style italic
-				text-transform uppercase
 		p
 			width 90%
 			font(16px,Helvetica,400,$black)
@@ -161,3 +162,58 @@
 			z-index 1
 			right 0
 			top -35px
+
+.services
+	min-height 650px
+	width 100%
+	background-color: #efefef
+	text-align center
+	h1
+		font(40px,Helvetica,400,$black)
+		padding-top 44px
+	p
+		font(16px,Helvetica,400,$black)
+		line-height 23px
+		margin-top 20px
+	.servicesWrapper
+		display flex
+		flex-wrap wrap
+	.serviceBox
+		width 311px
+		height 369px
+		margin 35px 20px
+		img
+			height 100%
+			width 100%
+			max-height 284px
+		.info
+			text-transform uppercase
+			font
+			min-height 100px
+			background-color: $darkRed
+			font(25px,Helvetica,400,#fff)
+			border-top 6px solid #af5e5e
+			margin-top -5px
+			display flex
+			flex-flow column wrap
+			justify-content center
+		span
+			display block
+			font(25px,Helvetica,700,#fff)
+			font-style: italic
+
+.second
+	background-color: #acacac !important
+	border-top 6px solid #cbcbcb !important
+	color $black !important
+	span
+		color $black !important
+
+.third
+	background-color: #757575 !important
+	border-top 6px solid #a8a8a8 !important
+	position relative
+	top -85px
+
+.fix
+	max-height 370px !important
