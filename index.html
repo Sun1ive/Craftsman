@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="_libs/normalize.min.css">
 <!-- <link rel="stylesheet" href="_libs/animate.min.css"> -->
 <link rel="stylesheet" href="_styles/style.min.css">
+<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 
@@ -113,6 +114,32 @@
 		<div class="eliteText-logo">
 			<img src="_img/Elite.png" alt="eliteLogo">
 		</div>
+	</div>
+</section>
+
+<section class="form">
+	<div class="leftBlock">
+		<h1>Fill Out the form</h1>
+		<h2>To contact us today</h2>
+		<div class="border"></div>
+		<div class="call">Or call us for a free quote</div>
+		<div class="number">416.282.4229</div>
+	</div>
+	<div class="rightBlock">
+		<button class="formButton">Fill the Form</button>
+		<form id="form">
+			<div class="upperText">Contact us</div>
+			<label for="name">Your Name</label>
+			<input type="text" id="name">
+			<label for="email">Your Email</label>
+			<input type="email" id="email">
+			<label for="message">Your Message</label>
+			<textarea id="message"></textarea>
+			<div class="access">
+			<input type="submit" value="Submit">
+			<img src="_img/not a robot.png" alt="captcha">
+			</div>
+		</form>
 	</div>
 </section>
 </main>
