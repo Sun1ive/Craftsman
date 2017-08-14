@@ -254,6 +254,7 @@
 		#form
 			z-index: 10
 			.upperText
+				margin-top 40px
 				text-align center
 			position absolute
 			top -50px
@@ -329,3 +330,12 @@
 			font-size: 48px
 			font-weight: bold
 			color $redText
+
+.maps
+	iframe
+		width: 100%;
+		display: block;
+		pointer-events: none;
+		position: relative; /* IE needs a position other than static */
+.clicked
+	pointer-events: auto !important
