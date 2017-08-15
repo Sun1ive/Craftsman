@@ -276,6 +276,7 @@
 			input
 				height 50px
 				width 530px
+				font-size: 30px
 			label
 				width 530px
 				margin 25px 0 5px 0
@@ -336,6 +337,48 @@
 		width: 100%;
 		display: block;
 		pointer-events: none;
-		position: relative; /* IE needs a position other than static */
+		position: relative;
 .clicked
 	pointer-events: auto !important
+
+footer
+	min-height 440px
+	background-color: #323232
+	.footer
+		display flex
+		flex-wrap wrap
+		min-height 440px
+		padding-top 50px
+		h2
+			text-transform uppercase
+			margin-bottom 10px
+		.firstFooter
+			width 25%
+			font(16px,Helvetica,400,#fff)
+			line-height 32px
+			.myButton
+				margin 10px 0
+				max-width 230px
+				cursor pointer
+				text-align center
+				text-transform uppercase
+				font-weight bold
+				line-height 34px
+				background-color: $redText
+			h2
+				font-weight 700
+				font-size 22px
+				margin-bottom 10px
+			i
+				padding-right: 10px
+		.secondFooter
+			font(16px,Helvetica,400,#fff)
+			width 25%
+			line-height 32px
+			h2
+				font-weight: 700
+		.thirdFooter
+			width 25%
+			form
+				display flex
+				flex-flow column wrap
