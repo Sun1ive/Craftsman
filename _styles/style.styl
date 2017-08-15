@@ -11,13 +11,6 @@
 	margin 0 auto
 	position relative
 
-.background
-	background-image: url('../_img/headerText.png')
-	height 100%
-	height: 744px
-	&-gradient
-		background-image url('../_img/top-gradient.png')
-		height 479px
 
 .container
 	max-width 1100px
@@ -33,65 +26,175 @@
 	flex-direction row
 	flex-wrap wrap
 	align-items center
+	// position: relative
 	position: fixed
+	xxs(flex-direction, column)
+	xxs(justify-content, center)
 	max-width 1100px
 	min-height 120px
 	width 100%
 	z-index 999
+	background-color: rgba(255, 255, 255, .5)
 	.firstBlock
 		display flex
 		justify-content flex-end
+		align-items center
+		// sm(flex-flow, column wrap)
+		sm(display, none)
 	.secondBlock
 		margin-top 10px
 		display flex
 		justify-content flex-end
 		font(29px,Helvetica,400,$redText)
+		align-items center
+		// sm(flex-flow, column wrap)
+		sm(display, none)
 		text-transform uppercase
 		.phone
 			font-weight bold
 			margin-left 40px
+			sm(margin, 10px 0)
 	&-logo
+		xs(text-align, center)
 		margin-top 20px
 		width 50%
 		flex-grow 1
+		col-lg-1()
+		col-md-3()
+		col-xs-6()
+		col-xxs-12()
+		md(margin-left, 35px)
+		xxs(margin-left, 0)
+	&-lowResMenu
+		img
+			xs(transform, scale(0.7))
+		display none
+		sm(display, flex)
+		margin 25px 125px 0 0
+		col-xs-5()
+		col-xxs-12()
+		xxs(margin, 0)
+		xs(margin, 25px 40px 0 0)
+		xs(justify-content, flex-end)
+		cursor: pointer
+		position relative
+		.lowResMenu
+			display none
+			position absolute
+			top: 65px
+			left -15px
+			xs(left, 45%)
+			xxs(left, 43%)
+			xxs(top, 14px)
+			li
+				max-width 150px
+				width 100%
+				background-color: #454547
+				border-bottom 1px solid #000
+				padding 10px 0px
+				xxs(padding, 10px 0)
+				a
+					padding 10px 15px
+					xxs(padding, 5px 10px)
+				&:hover
+					background-color: #454547 - 20%
+			.hasLowResSubMenu
+				&:hover
+					.lowResSubMenu
+						display block
+			a
+				font(13px,Helvetica,400,#fff)
+			.lowResSubMenu
+				display none
+				position absolute
+				left -127px
+				xxs(left, -117px)
+				top 78px
+
+
 	&-menu
 		margin-top 20px
 		width 50%
+		col-md-7()
 		flex-grow 1
 		.socials
 			display flex
 			font-size: 30px
 			margin-left 30px
+			sm(margin, 10px 0);
+			transition .3s;
 			a
-				margin 0 22px
+				margin 0 10px
 				color: #c00c0c
-				&:last-child
-					margin-right: 0
+				&:hover
+					transition .3s;
+					color $darkRed - 15%
 		.button
 			background-color: $darkRed
 			font(15px,Helvetica,400,#fff)
 			text-transform uppercase
 			padding 10px 15px
 			cursor: pointer
+			transition .3s
+			&:hover
+				transition .3s
+				background-color: $darkRed + 15%
+
+.fotorama
+	width 100%
+	display flex
+
+
+.fotorama__nav-wrap
+	display none
 
 .headerNavBar
 	display flex
 	justify-content space-between
 	width 100%
 	padding-top 15px
+	text-align center
+	sm(display, none)
 	a
 		font(16px,Helvetica,400,$black)
 		text-transform uppercase
 	.active
+		md(margin-right, 10px)
 		font-weight: bold
 		color $redText
 	.hasMenu
 		position relative
+		.showMenu
+			display block !important
+		.subMenu
+			display none
+			&:before
+				content ""
+				position absolute
+				top -15px
+				left 89px
+				border-style: solid;
+				border-width: 0 12.5px 15px 12.5px;
+				border-color: transparent transparent #4e4d4e transparent;
+			min-width 200px
+			top 35px
+			md(top, 55px)
+			md(left, -15px)
+			position absolute
+			background-color: #4d4c4d
+			li
+				padding 10px 5px
+				border-bottom 1px solid #3b3b3b
+			a
+				text-transform none
+				padding 0 5px
+				font(16px,Helvetica,400,#fff)
 		&:after
 			content ""
 			position absolute
 			top 5px
 			right: -13px
+			md(right, 10px)
 			border-style: solid;
 			border-width: 5px 5px 0 5px;
 			border-color: #323232 transparent transparent transparent;
@@ -103,11 +206,20 @@
 		display flex
 		align-items center
 		min-height 550px
+		md(flex-wrap, wrap)
 	.aboutCraft
 		flex-grow 1
 		margin-top 30px
-		max-width 550px
+		max-width 50%
 		min-height 455px
+		md(max-width, 100%)
+		md(display, flex)
+		md(flex-flow, column wrap)
+		md(justify-content, center)
+		md(align-items, center)
+		col-md-12()
+		col-xxs-10()
+		xxs(text-align, center)
 		h1
 			font(40px,Helvetica,400,$black)
 			margin-bottom 20px
@@ -131,6 +243,10 @@
 		.add
 			width 327px
 			height 83px
+			xs(margin-left, 50px)
+			xxs(margin, 0)
+			xxs(transform, scale(.7))
+			text-align center
 			background-image url('../_img/button.png')
 			font(20px,Helvetica,400,#fff);
 			text-transform uppercase
@@ -139,7 +255,6 @@
 			align-items center
 			justify-content center
 			transform translateX(-35px)
-			cursor: pointer
 			span
 				width 80%
 			.number
@@ -148,25 +263,41 @@
 				font-style: italic
 
 	.picture
-		max-width 550px
 		flex-grow 1
 		min-height 455px
 		margin-top 100px
+		display flex
+		justify-content center
+		align-items center
 		position relative
+		text-align center
+		col-xxs-11()
 		.mainPic
 			position relative
+			max-width 100%
 			z-index 10
 		.back
+			max-width 100%
 			position absolute
 			z-index 1
 			right 0
-			top -35px
+			top 5px
+			md(right, 15%)
+			sm(right, 5%)
+			xs(right, 0)
+			xxs(top, 12%)
+			xxs(max-height, 350px)
 
 .services
 	min-height 650px
 	width 100%
 	background-color: #efefef
 	text-align center
+	.ourServices
+		display flex
+		flex-flow column wrap
+		col-xxs-12()
+		xxs(margin, 0 auto)
 	h1
 		font(40px,Helvetica,400,$black)
 		padding-top 44px
@@ -176,11 +307,21 @@
 		margin-top 20px
 	.servicesWrapper
 		display flex
-		flex-wrap wrap
+		md(flex-wrap, wrap)
+		justify-content center
+		width 100%
+		
 	.serviceBox
 		width 311px
 		height 369px
 		margin 35px 20px
+		col-sm-6()
+		col-xs-10()
+		col-xxs-12()
+		sm(margin, 35px 5px)
+		&:nth-child(3)
+			col-md-6()
+			col-xs-10()
 		img
 			height 100%
 			width 100%
@@ -222,71 +363,150 @@
 	background-color: #000000
 	.container
 		display flex
+		xs(flex-wrap, wrap)
 		justify-content space-around
 		align-items center
 		min-height 205px
 		.eliteText
+			display flex
+			flex-flow column wrap
 			text-transform uppercase
+			xs(text-align,center)
+			xs(margin-left, 0)
+			xs(align-items, center)
+			lg(margin-left, 25px)
+			col-xs-12()
 			&-h1
+				sm(margin-top, 25px)
 				font(33px,Helvetica,bold,#fff)
 				line-height 41px
+				sm(font-size, 24px)
+				xxs(font-size, 18px)
 			&-logo
+				text-align center
 				col-5()
+				col-sm-6()
+				col-xs-12()
+				xs(margin, 25px 0)
 			.myButton
+				max-width 209px
 				cursor: pointer
 				text-transform uppercase
 				padding 15px 40px
 				background-color: $darkRed
 				border none
 				font(20px,Helvetica,400,#fff)
+				xxs(font-size, 14px)
 				margin-top 15px
+				transition .3s
+				sm(margin-bottom, 25px)
+				&:hover
+					transition .3s
+					background-color: $darkRed - 20%
 
 .form
 	min-height 500px
 	background-color: #FFF
 	display flex
+	xs(flex-flow, column wrap)
 	.rightBlock
 		display: flex
 		justify-content center
 		align-items center
 		flex-grow 1
 		position relative
+		width 100%
+		col-xs-12()
+		xs(align-items, center)
+		xs(margin, 0 auto)
 		#form
 			z-index: 10
 			.upperText
 				margin-top 30px
+				sm(margin-top, 60px)
 				text-align center
+				sm(font-size, 30px)
 			position absolute
 			top -50px
+			xs(top, auto)
 			box-shadow: 0 0 30px 2px rgba(137, 137, 137, 0.48)
+			max-width 650px
 			min-height 600px
-			min-width 650px
+			width 100%
+			height 100%
 			background-color: #FFF
-			display none
+			display flex
 			flex-flow column wrap
 			font(17px,Helvetica,400,$black)
 			align-items center
+			.close
+				position absolute
+				right 20px
+				top 20px
+				font-size: 24px
+				cursor: pointer
+				height 40px
+				width 40px
+				background-color: $darkRed
+				text-align center
+				line-height 40px
+				border-radius 50%
+				color #fff
+				border 1px solid #000
+				font-family Helvetica
+				transition .3s
+				&:hover
+					background-color: $darkRed +10%
 			.access
 				display flex
 				flex-direction row-reverse
+				sm(flex-direction, column-reverse)
 				align-items center
 				justify-content space-between
-				width: 530px
+				max-width: 530px
+				lg(max-width, 450px)
+				md(max-width, 300px)
+				sm(max-width, 200px)
+				xs(max-width, 300px)
+				xxs(max-width, 220px)
+				width 100%
 				margin-top 30px
 			input
-				height 50px
-				width 530px
+				max-height 50px
+				max-width 530px
+				lg(max-width, 450px)
+				md(max-width, 300px)
+				sm(max-width, 200px)
+				xs(max-width, 300px)
+				xxs(max-width, 220px)
+				width 100%
 				font-size: 30px
 			label
-				width 530px
+				max-width 530px
+				lg(max-width, 450px)
+				md(max-width, 300px)
+				sm(max-width, 200px)
+				xs(max-width, 300px)
+				xxs(max-width, 220px)
+				width 100%
 				margin 25px 0 5px 0
 			textarea
-				height: 143px
-				width 530px
+				max-height: 143px
+				max-width 530px
+				lg(max-width, 450px)
+				md(max-width, 300px)
+				sm(max-width, 200px)
+				xs(max-width, 300px)
+				xxs(max-width, 220px)
+				width 100%
 			input[type='submit']
-				width 209px
+				max-width 209px
+				padding 20px 0
+				margin-top 20px
+				width 100%
 				text-transform uppercase
 				font(21px,Helvetica,700,#fff)
+				line-height 10px
 				background-color: $darkRed
 				border none
 				cursor: pointer
@@ -297,27 +517,38 @@
 			border none
 			padding 15px 30px
 			cursor pointer
+			xs(margin, 25px 0)
 	.leftBlock
 		display flex
 		flex-flow column wrap
 		justify-content center
 		align-items flex-end
+		xs(align-items, center)
+		xs(margin, 0 auto)
 		text-align right
 		max-width 500px
+		width 100%
+		sm(max-width, 330px)
 		min-height 500px
 		font-family Helvetica
 		text-transform uppercase
 		flex-grow 1
+		col-xs-12()
+		xs(max-width, 100%)
+		xs(text-align, center)
 		h1
 			font-size: 43px
 			font-weight 400
 			color $black
+			xs(font-size, 35px)
 		h2
 			font-size: 38px
 			font-weight bold
 			color $redText
 			margin-bottom: 30px
 			font-style: italic
+			xs(margin-top, 10px)
+			xs(font-size, 30px)
 		.border
 			width 257px
 			height 1px
@@ -326,15 +557,23 @@
 			margin-top 30px
 			font-size: 38px
 			width 60%
+			col-sm-10()
 			color $black
+			xs(font-size, 35px)
 		.number
 			margin-top 5px
 			font-style: italic
 			font-size: 48px
+			xs(margin-top, 10px)
+			xs(font-size, 35px)
 			font-weight: bold
 			color $redText
 
+.hidden
+	display none !important
+
 .maps
+	// display none
 	iframe
 		width: 100%;
 		display: block;
@@ -351,15 +590,27 @@
 		flex-wrap nowrap
 		min-height 440px
 		padding-top 50px
+		md(flex-wrap, wrap)
+		justify-content-md(center)
 		h2
 			text-transform uppercase
 			margin-bottom 10px
 		.firstFooter
 			width 25%
+			xs(display, flex)
+			xs(flex-flow, column wrap)
+			xs(align-items, center)
+			md(margin, 10px)
+			xs(margin, 30px)
+			col-md-6()
+			col-xs-12()
 			font(16px,Helvetica,400,#fff)
 			line-height 32px
+			p
+				xs(text-align, center)
 			.myButton
 				margin 10px 0
+				padding 5px 20px
 				max-width 230px
 				cursor pointer
 				text-align center
@@ -374,6 +625,13 @@
 			i
 				padding-right: 10px
 		.secondFooter
+			col-md-6()
+			col-xs-12()
+			xs(display, flex)
+			xs(flex-flow, column wrap)
+			xs(align-items, center)
+			md(margin, 10px)
+			xs(margin, 30px)
 			font(16px,Helvetica,400,#fff)
 			width 25%
 			line-height 32px
@@ -381,6 +639,13 @@
 				font-weight: 700
 				font-size 22px
 		.thirdFooter
+			xs(display, flex)
+			xs(flex-flow, column wrap)
+			xs(align-items, center)
+			md(margin, 10px)
+			xs(margin, 30px)
+			col-md-6()
+			col-xs-12()
 			width 25%
 			font(16px,Helvetica,400,#fff)
 			line-height 32px
@@ -421,18 +686,25 @@
 					max-height 59px
 					width 100%
 		.fourthFooter
+			xs(display, flex)
+			xs(flex-flow, column wrap)
+			xs(align-items, center)
+			md(margin, 10px)
+			xs(margin, 30px)
+			col-md-6()
+			col-xs-12()
 			font(16px,Helvetica,700,#fff)
-			h2
-				margin-bottom: 25px
+			.visit
+				display flex
+				align-items center
+				md(flex-flow, column wrap)
+				justify-content center
 				position relative
-				&:after
-					position absolute
-					content ""
-					height 30px
-					width 30px
-					right: -20px
-					background-image url('../_img/pinterest.png')
-					background-repeat no-repeat
+				margin-bottom: 25px
+				xs(text-align, center)
+				h2
+					width 100%
+
 
 #second
 	min-height 65px
@@ -440,5 +712,6 @@
 	display flex
 	align-items center
 	font(14px,Helvetica,400,#fff)
+	xs(text-align, center)
 	.container
 		width 100%

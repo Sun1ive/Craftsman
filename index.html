@@ -9,6 +9,7 @@
 <!-- <meta name="og:image" content="image"> -->
 <!-- Индексирует страницу -->
 <meta name="robots" content="index,follow">
+<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="_libs/normalize.min.css">
 <!-- <link rel="stylesheet" href="_libs/animate.min.css"> -->
@@ -19,12 +20,28 @@
 
 <div id="wrapper">
 <header>
-	<div class="background">
-	<div class="background-gradient">
-		<div class="container">
-			<div class="header">
+<div class="container">
+		<div class="header">
 				<div class="header-logo">
 					<img src="_img/Logo.png" alt="logo">
+				</div>
+				<div class="header-lowResMenu">
+					<img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-64.png" alt="lowResMenu">
+					<ul class="lowResMenu">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li class="hasLowResSubMenu"><a href="#"> Services</a>
+						<ul class="lowResSubMenu">
+							<li><a href="#">Interior Shutters</a></li>
+							<li><a href="#">Exterior Shutters</a></li>
+							<li><a href="#">Refinishing</a></li>
+						</ul>
+						</li>
+						<li><a href="#">Commercial</a></li>
+						<li><a href="#">Galleries</a></li>
+						<li><a href="#">Faqs</a></li>
+						<li><a href="#">Contact us</a></li>
+					</ul>
 				</div>
 				<div class="header-menu">
 					<div class="firstBlock">
@@ -44,17 +61,29 @@
 				<ul class="headerNavBar">
 					<li><a href="#" class="active">Home</a></li>
 					<li><a href="#">About</a></li>
-					<li class="hasMenu"><a href="#">Residential Services</a></li>
+					<li class="hasMenu"><a href="#">Residential Services</a>
+					<ul class="subMenu">
+						<li><a href="#">Interior Shutters</a></li>
+						<li><a href="#">Exterior Shutters</a></li>
+						<li><a href="#">Refinishing & Repainting</a></li>
+					</ul></li>
 					<li><a href="#">Commercial/wholesale services</a></li>
 					<li><a href="#">Galleries</a></li>
 					<li><a href="#">Warranty info</a></li>
 					<li><a href="#">Faqs</a></li>
 					<li><a href="#">Contact us</a></li>
 				</ul>
-			</div>
 		</div>
 	</div>
+
+<div class="background">
+	<div class="fotorama">
+	  <img src="_img/headerText.png">
+	  <img src="_img/headerText.png">
+	  <img src="_img/headerText.png">
+	  <img src="_img/headerText.png">
 	</div>
+</div>
 </header>
 
 <main>
@@ -70,8 +99,8 @@
 			</div>
 		</div>
 		<div class="picture">
-			<img class="mainPic" src="_img/table.png" alt="room">
-			<img class="back" src="_img/back.png" alt="back">
+				<img class="mainPic" src="_img/table.png" alt="room">
+				<img class="back" src="_img/back.png" alt="back">
 		</div>
 		</div>
 	</section>
@@ -127,7 +156,8 @@
 	</div>
 	<div class="rightBlock">
 		<button class="formButton">Fill the Form</button>
-		<form id="form">
+		<form id="form" class="hidden">
+			<div class="close">X</div>
 			<div class="upperText">Contact us</div>
 			<label for="name">Your Name</label>
 			<input type="text" id="name">
@@ -190,7 +220,10 @@
 			</form>
 		</div>
 		<div class="fourthFooter">
-			<h2>Visit our profile</h2>
+			<div class="visit">
+				<h2>Visit our profile</h2>
+				<img src="_img/pinterest.png" alt="logo">
+			</div>
 			<img src="_img/pint.png" alt="profile">
 		</div>
 	</div>
@@ -211,6 +244,7 @@
 
 <script src="_libs/jquery-3.2.1.min.js"></script>
 <!-- <script src="dist/common.min.js"></script> -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 <script src="_scripts/common.js"></script>
 </body>
 </html>
