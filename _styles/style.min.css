@@ -13,10 +13,6 @@
   src: url("../_fonts/Helvetica-BoldOblique.woff2") format("woff2");
 }
 
-[v-cloak] {
-  display: none;
-}
-
 body {
   padding: 0;
   margin: 0;
@@ -111,6 +107,10 @@ ol {
   align-items: center;
 }
 
+.header .firstBlock img {
+  margin-left: 35px;
+}
+
 .header .secondBlock {
   margin-top: 10px;
   display: -webkit-box;
@@ -176,7 +176,22 @@ ol {
   background-color: #373739;
 }
 
-.header-lowResMenu .lowResMenu .hasLowResSubMenu:hover .lowResSubMenu {
+.header-lowResMenu .lowResMenu .hasLowResSubMenu {
+  position: relative;
+}
+
+.header-lowResMenu .lowResMenu .hasLowResSubMenu:before {
+  content: "\2039";
+  position: absolute;
+  color: #fff;
+  left: 5px;
+  top: 8px;
+  font-size: 18px;
+}
+
+.header-lowResMenu .lowResMenu .hasLowResSubMenu:hover .lowResSubMenu,
+.header-lowResMenu .lowResMenu .hasLowResSubMenu:focus .lowResSubMenu,
+.header-lowResMenu .lowResMenu .hasLowResSubMenu:active .lowResSubMenu {
   display: block;
 }
 
@@ -191,7 +206,7 @@ ol {
   display: none;
   position: absolute;
   left: -127px;
-  top: 78px;
+  top: 0;
 }
 
 .header-menu {
@@ -201,30 +216,6 @@ ol {
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-}
-
-.header-menu .socials {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 30px;
-  margin-left: 30px;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.header-menu .socials a {
-  margin: 0 10px;
-  color: #c00c0c;
-}
-
-.header-menu .socials a:hover {
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-  color: #6e0000;
 }
 
 .header-menu .button {
@@ -245,7 +236,7 @@ ol {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  background-color: #ba0000;
+  background-color: #670000;
 }
 
 .fotorama {
@@ -306,7 +297,7 @@ ol {
 .headerNavBar .hasMenu .subMenu:before {
   content: "";
   position: absolute;
-  top: -15px;
+  top: -13px;
   left: 89px;
   border-style: solid;
   border-width: 0 12.5px 15px 12.5px;
@@ -532,6 +523,21 @@ ol {
   width: 311px;
   height: 369px;
   margin: 35px 20px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.services .serviceBox:hover {
+  -webkit-box-shadow: 0 0 70px #000;
+  box-shadow: 0 0 70px #000;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .services .serviceBox img {
@@ -705,7 +711,6 @@ ol {
   max-width: 650px;
   min-height: 600px;
   width: 100%;
-  height: 100%;
   background-color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -783,7 +788,8 @@ ol {
   max-height: 50px;
   max-width: 530px;
   width: 100%;
-  font-size: 30px;
+  font-size: 22px;
+  min-height: 50px;
 }
 
 .form .rightBlock #form label {
@@ -793,7 +799,8 @@ ol {
 }
 
 .form .rightBlock #form textarea {
-  max-height: 143px;
+  min-height: 130px;
+  font-size: 22px;
   max-width: 530px;
   width: 100%;
 }
@@ -801,7 +808,7 @@ ol {
 .form .rightBlock #form input[type='submit'] {
   max-width: 209px;
   padding: 20px 0;
-  margin-top: 20px;
+  margin: 25px 0;
   width: 100%;
   text-transform: uppercase;
   font-size: 21px;
@@ -812,6 +819,13 @@ ol {
   background-color: #810000;
   border: none;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.form .rightBlock #form input[type='submit']:hover {
+  background-color: #670000;
 }
 
 .form .rightBlock .formButton {
@@ -824,6 +838,16 @@ ol {
   border: none;
   padding: 15px 30px;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.form .rightBlock .formButton:hover {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #670000;
 }
 
 .form .leftBlock {
@@ -947,6 +971,16 @@ ol {
   font-weight: bold;
   line-height: 34px;
   background-color: #800000;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#first .footer .firstFooter .myButton:hover {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #600;
 }
 
 #first .footer .firstFooter h2 {
@@ -1039,6 +1073,16 @@ ol {
   font-weight: 700;
   color: #fff;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#first .footer .thirdFooter form input[type="Submit"]:hover {
+  background-color: #670000;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 #first .footer .thirdFooter form img {
@@ -1228,6 +1272,10 @@ ol {
     max-width: 300px;
   }
 
+  .form .leftBlock {
+    margin-right: 30px;
+  }
+
   #first .footer {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
@@ -1304,10 +1352,6 @@ ol {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-  }
-
-  .header-menu .socials {
-    margin: 10px 0;
   }
 
   .headerNavBar {
@@ -1758,6 +1802,10 @@ ol {
     padding: 5px 10px;
   }
 
+  .header-lowResMenu .lowResMenu .hasLowResSubMenu:before {
+    left: 1px;
+  }
+
   .header-lowResMenu .lowResMenu .lowResSubMenu {
     left: -117px;
   }
@@ -1804,6 +1852,17 @@ ol {
   }
 
   .services .serviceBox {
+    width: -webkit-calc(100% - 30px);
+    width: calc(100% - 30px);
+  }
+
+  .services .serviceBox:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  .services .serviceBox:nth-child(3) {
     width: -webkit-calc(100% - 30px);
     width: calc(100% - 30px);
   }

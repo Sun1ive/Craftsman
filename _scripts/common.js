@@ -23,4 +23,8 @@ $(document).ready(function() {
 		event.preventDefault();
 		alert("ajax_request");
 	});
+	$('.hasLowResSubMenu a').click(function(e) {
+		e.preventDefault();
+		$('.lowResSubMenu').toggle();
+	});
 });
